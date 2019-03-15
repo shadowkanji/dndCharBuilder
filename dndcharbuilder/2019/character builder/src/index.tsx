@@ -6,8 +6,7 @@ import "./scss/style.scss"; // STYLE
 import { h, render, Component } from "preact"; // DEPENDENCIES
 import { Provider } from "redux-zero/preact"; // STORAGE
 
-import Kanji from "../components/welcome/welcome";
-
+import LoginPage from './pages/login';
 
 declare const module: any;
 
@@ -15,7 +14,7 @@ declare const module: any;
 const App = () => (
     <div id="st-wrapper">
         <div id="st-welcome">
-            <Kanji />
+            <LoginPage />
         </div>
         
     </div>
