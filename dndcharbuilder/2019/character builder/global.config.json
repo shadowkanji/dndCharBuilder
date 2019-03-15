@@ -1,0 +1,7 @@
+{
+  "baseurl": "https://mydomain",
+  "imgUrl": "https://thirdserver",
+  "dest": "dndcharbuilder/undefined/2019",
+  "port": "9001",
+  "upload": true
+}

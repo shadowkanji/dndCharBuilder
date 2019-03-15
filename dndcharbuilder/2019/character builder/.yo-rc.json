@@ -1,0 +1,178 @@
+{
+  "generator-webpack-preact": {
+    "configuration": {
+      "config": {
+        "topScope": [
+          "const path = require(\"path\")",
+          "const CleanWebpackPlugin = require(\"clean-webpack-plugin\")",
+          "const HtmlWebpackPlugin = require(\"html-webpack-plugin\")"
+        ],
+        "webpackOptions": {
+          "entry": {
+            "index": "'./src/index.tsx'"
+          },
+          "output": {
+            "filename": "'[name].bundle.js'",
+            "path": "path.resolve(__dirname, \"./dist\")"
+          },
+          "resolve": {
+            "extensions": [
+              "'.ts'",
+              "'.tsx'",
+              "'.js'",
+              "'.jsx'"
+            ]
+          },
+          "plugins": [
+            "new CleanWebpackPlugin(['dist'])",
+            "new HtmlWebpackPlugin({title:'WebPack - Preact', template: './public/index.html', inlineSource: '.(js|css)$', minify: { collapseWhitespace: true, removeComments: true } })"
+          ],
+          "module": {
+            "rules": [
+              {
+                "test": "/\\.s?css$/",
+                "use": [
+                  {
+                    "loader": "'style-loader'"
+                  },
+                  {
+                    "loader": "'css-loader'"
+                  },
+                  {
+                    "loader": "'sass-loader'"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "configName": "config"
+      },
+      "dev": {
+        "topScope": [
+          "const path = require(\"path\")",
+          "const webpack = require(\"webpack\")",
+          "const merge = require(\"webpack-merge\")",
+          "const common = require(\"./webpack.config.js\")"
+        ],
+        "webpackOptions": {
+          "mode": "'development'",
+          "optimization": {
+            "usedExports": true
+          },
+          "devtool": "'inline-source-map'",
+          "devServer": {
+            "contentBase": "'./dist'",
+            "hot": true,
+            "compress": false
+          },
+          "plugins": [
+            "new webpack.HotModuleReplacementPlugin()"
+          ],
+          "module": {
+            "rules": [
+              {
+                "test": "/\\.(tsx?|jsx?)$/",
+                "loader": "'babel-loader'",
+                "exclude": "/node_modules/",
+                "options": {
+                  "presets": [
+                    "'@babel/typescript'",
+                    [
+                      "'@babel/preset-env'",
+                      {
+                        "'targets'": {
+                          "'browsers'": [
+                            "'last 2 versions'"
+                          ]
+                        }
+                      }
+                    ]
+                  ],
+                  "plugins": [
+                    "'@babel/plugin-proposal-object-rest-spread'",
+                    "'@babel/plugin-proposal-class-properties'",
+                    [
+                      "'@babel/plugin-transform-react-jsx'",
+                      {
+                        "'pragma'": "'h'"
+                      }
+                    ]
+                  ]
+                }
+              },
+              {
+                "test": "/\\.(tsx?|jsx?)$/",
+                "loader": "'ts-loader'",
+                "exclude": "/node_modules/",
+                "options": {
+                  "configFile": "'tsconfig.dev.json'"
+                }
+              }
+            ]
+          }
+        },
+        "configName": "dev",
+        "merge": "common"
+      },
+      "pro": {
+        "topScope": [
+          "const path = require(\"path\")",
+          "const merge = require(\"webpack-merge\")",
+          "const common = require(\"./webpack.config.js\")"
+        ],
+        "webpackOptions": {
+          "mode": "'production'",
+          "optimization": {
+            "usedExports": true,
+            "minimize": true
+          },
+          "module": {
+            "rules": [
+              {
+                "test": "/\\.(tsx?|jsx?)$/",
+                "loader": "'babel-loader'",
+                "exclude": "/node_modules/",
+                "options": {
+                  "presets": [
+                    "'@babel/typescript'",
+                    [
+                      "'@babel/preset-env'",
+                      {
+                        "'targets'": {
+                          "'browsers'": [
+                            "'last 2 versions'"
+                          ]
+                        }
+                      }
+                    ]
+                  ],
+                  "plugins": [
+                    "'@babel/plugin-proposal-object-rest-spread'",
+                    "'@babel/plugin-proposal-class-properties'",
+                    [
+                      "'@babel/plugin-transform-react-jsx'",
+                      {
+                        "'pragma'": "'h'"
+                      }
+                    ]
+                  ]
+                }
+              },
+              {
+                "test": "/\\.(tsx?|jsx?)?$/",
+                "loader": "'ts-loader'",
+                "exclude": "/node_modules/",
+                "options": {
+                  "configFile": "'tsconfig.pro.json'"
+                }
+              }
+            ]
+          }
+        },
+        "configName": "pro",
+        "merge": "common"
+      }
+    }
+  }
+}
