@@ -6,6 +6,9 @@ import "./scss/style.scss"; // STYLE
 import * as ReactDOM from "react-dom"; // DEPENDENCIES
 import * as React from "react";
 import LoginPage from './pages/login';
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import RacePage from "./pages/races";
+
 
 declare const module: any;
 
@@ -13,7 +16,8 @@ declare const module: any;
 const App = () => (
     <div id="st-wrapper">
         <div id="st-welcome">
-            <LoginPage />
+            <RacePage />
+            
         </div>
         
     </div>
