@@ -55,7 +55,7 @@ module.exports = merge(common, {
 				// include: 'path.resolve(__dirname, "src")',
                 exclude: /node_modules/,
 				options: {
-					configFile: "tsconfig.dev.json"
+					configFile: "tsconfig.json"
 				}
 			}
 		]
