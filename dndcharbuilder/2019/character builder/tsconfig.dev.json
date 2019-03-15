@@ -9,7 +9,6 @@
     "module": "commonjs",
     "outDir": "./dist",
     "jsx": "react",
-    "jsxFactory": "h",
     "allowJs": true
   },
   "include": [

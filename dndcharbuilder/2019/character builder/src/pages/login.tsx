@@ -1,7 +1,7 @@
-import { h, Component } from "preact"; // DEPENDENCIES
+import * as React from "react"; // DEPENDENCIES
 import { Form , Button } from 'react-bootstrap';
 
-export default class LoginPage extends Component<any, any> {
+export default class LoginPage extends React.Component<any, any> {
 
     constructor(props:any){
         super(props);
