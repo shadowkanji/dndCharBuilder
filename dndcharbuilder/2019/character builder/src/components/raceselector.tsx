@@ -39,8 +39,7 @@ export default class RaceSelector extends React.Component<RaceSelectorProps, any
 
     render() {
 
-        return () =>
-        {
+        return (
             <Table>
                 <thead>
                     <tr>
@@ -51,11 +50,10 @@ export default class RaceSelector extends React.Component<RaceSelectorProps, any
                     </tr>
                 </thead>
                 <tbody>
-                   {/* {this.filltable()} */}
+                   {this.filltable()}
                 </tbody>
             </Table>
-
-        }
+            ) 
     }
 
 }

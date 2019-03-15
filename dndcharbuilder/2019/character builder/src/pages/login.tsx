@@ -11,47 +11,49 @@ export default class LoginPage extends React.Component<any, any> {
 
     render() {
 
-        return <Container className='containerClass'>
-            <Row>
-                <Col>
-                    <Form>
-                        <Form.Group controlId="formBasicEmail">
-                            <Row>
-                            <Col xs={3}>                            
-                                <Form.Label>Email address</Form.Label>
-                            </Col>
-                            <Col>
-                                <Form.Control type="email" placeholder="Enter email" />
-                            
-                                <Form.Text className="text-muted">
-                                    We'll never share your email with anyone else.
+        return (
+            <Container className='containerClass'>
+                <Row>
+                    <Col>
+                        <Form>
+                            <Form.Group controlId="formBasicEmail">
+                                <Row>
+                                    <Col xs={3}>
+                                        <Form.Label>Email address</Form.Label>
+                                    </Col>
+                                    <Col>
+                                        <Form.Control type="email" placeholder="Enter email" />
+
+                                        <Form.Text className="text-muted">
+                                            We'll never share your email with anyone else.
                                 </Form.Text>
-                            </Col>
-                    </Row>
-                        </Form.Group>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                        <Row>
-                            <Col xs={3}>
-                                <Form.Label>Password</Form.Label>
-                            </Col>
-                            <Col>
-                                <Form.Control type="password" placeholder="Password" />
-                            </Col>
-                        </Row>
-                        </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Row>
+                                    <Col xs={3}>
+                                        <Form.Label>Password</Form.Label>
+                                    </Col>
+                                    <Col>
+                                        <Form.Control type="password" placeholder="Password" />
+                                    </Col>
+                                </Row>
+                            </Form.Group>
 
-                        <Form.Group controlId="formBasicChecbox">
-                            <Form.Check type="checkbox" label="Check me out" />
-                           
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
+                            <Form.Group controlId="formBasicChecbox">
+                                <Form.Check type="checkbox" label="Check me out" />
+
+                            </Form.Group>
+                            <Button variant="primary" type="submit">
+                                Submit
                     </Button>
-                    </Form>
-            </Col>
-            </Row>
-        </Container>
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
+       )
     }
 
 
